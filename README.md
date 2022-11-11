@@ -7,7 +7,6 @@ CPSCounter | Minecraft Bedrock Edition | Nukkit
 ---
 
 **Installation:**<br />
-:black_square_button: Make sure that `LlamaEconomy` and `FakeInventories` are installed on your server;<br />
 :black_square_button: Place plugin's .jar file into `plugins` folder on your server;<br />
 :black_square_button: Configure in Config;<br />
 :black_square_button: Launch the server;<br />
