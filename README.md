@@ -3,7 +3,8 @@ CPSCounter | Minecraft Bedrock Edition | Nukkit
 
 **Features:**<br />
 :star: You can see CPS in ActionBar;<br />
-:star: Cps limiter (Anti macro);<br />
+:star: Cps Limiter (Anti macro); <br />
+
 ---
 
 **Installation:**<br />
@@ -28,7 +29,7 @@ CPSCounter | Minecraft Bedrock Edition | Nukkit
 
 ---
 
-> * Link to cloudburstmc article -> [CloudburstMC](wait)
+> * Link to cloudburstmc article -> [CloudburstMC](https://www.cloudburstmc.org/resources/cpscounter.842/)
 
 ---
 
