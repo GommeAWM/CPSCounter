@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static reyd.CPSCounterMain.cpsActionBar;
+
 public class CPSListener implements Listener {
 
     private final CPSCounterMain plugin;
@@ -45,7 +47,7 @@ public class CPSListener implements Listener {
         cps.remove(event.getPlayer().getName());
         cps.put(event.getPlayer().getName(), cpsList);
 
-        if(conf.getBoolean("cpsActionBar")) {
+        if(cpsActionBar) {
             event.getPlayer().sendActionBar(String.valueOf(gCPS(event.getPlayer())));
         }
 

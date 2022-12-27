@@ -1,0 +1,9 @@
+#Cps action bar
+cpsActionBar: true
+
+#Max cps
+maxCps:
+  cps: 15
+  message: "&cTo fast! Your cps &b<cps> &cmax cps &b<maxCps>"
+
+

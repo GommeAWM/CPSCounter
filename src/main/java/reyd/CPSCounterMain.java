@@ -8,9 +8,17 @@ import reyd.Listener.CpsLimiter;
 
 public class CPSCounterMain extends PluginBase {
 
+    public static boolean cpsActionBar;
+    public static int maxCps;
+    public static String message;
     @Override
     public void onEnable() {
-        saveDefaultConfig();
+
+        this.saveDefaultConfig();
+        cpsActionBar = getConfig().getBoolean("cpsActionBar");
+        maxCps = getConfig().getInt("maxCps.cps");
+        message = getConfig().getString("maxCps.message");
+
         registerListener();
         super.onEnable();
     }
