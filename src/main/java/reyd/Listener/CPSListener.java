@@ -6,19 +6,29 @@ import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerQuitEvent;
 import cn.nukkit.event.server.DataPacketReceiveEvent;
 import cn.nukkit.network.protocol.LevelSoundEventPacket;
+import cn.nukkit.utils.Config;
+import reyd.CPSCounterMain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.SplittableRandom;
 
 public class CPSListener implements Listener {
 
-    private final HashMap<String, List<Long>> cps = new HashMap<>();
+    private final CPSCounterMain plugin;
 
+    public CPSListener(CPSCounterMain plugin) {
+        this.plugin = plugin;
+    }
+
+    private static final HashMap<String, List<Long>> cps = new HashMap<>();
+
+    @SuppressWarnings("unused")
     @EventHandler
     public void onPacket(DataPacketReceiveEvent event) {
         if (!(event.getPacket() instanceof LevelSoundEventPacket)) return;
+
+        Config conf = plugin.getConfig();
 
         LevelSoundEventPacket packet = (LevelSoundEventPacket) event.getPacket();
 
@@ -34,11 +44,14 @@ public class CPSListener implements Listener {
         cpsList.add(System.currentTimeMillis());
         cps.remove(event.getPlayer().getName());
         cps.put(event.getPlayer().getName(), cpsList);
-        event.getPlayer().sendActionBar(String.valueOf(gCPS(event.getPlayer())));
+
+        if(conf.getBoolean("cpsActionBar")) {
+            event.getPlayer().sendActionBar(String.valueOf(gCPS(event.getPlayer())));
+        }
 
     }
 
-    public int gCPS(Player player) {
+    public static int gCPS(Player player) {
         List<Long> list = cps.get(player.getName());
 
         if (list == null) return 0;
@@ -47,7 +60,7 @@ public class CPSListener implements Listener {
 
         return list.size();
     }
-
+    @SuppressWarnings("unused")
     @EventHandler
     public void onQuitListener(PlayerQuitEvent event){
 
