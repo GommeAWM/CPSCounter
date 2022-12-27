@@ -1,7 +1,7 @@
 # CPSCounter
 CPSCounter | Minecraft Bedrock Edition | Nukkit
 
-***Features:***<br />
+**Features:**<br />
 :star: You can see CPS in ActionBar;<br />
 :star: Cps limiter (Anti macro)
 ---
